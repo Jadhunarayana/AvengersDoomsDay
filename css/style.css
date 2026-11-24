@@ -1,0 +1,1593 @@
+
+/* ==========================================
+   DOOMSDAY - CINEMATIC WEBSITE
+   EMERALD GREEN VISUAL SYSTEM
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* GLOBAL */
+
+:root {
+    --green: #00ff88;
+    --green-dark: #006b3d;
+    --background: #010805;
+    --surface: #071b11;
+    --white: #ffffff;
+    --muted: #a4b8aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* LOADER */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #010805;
+    display: grid;
+    place-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-symbol {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 85px;
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 35px var(--green);
+    animation: loaderPulse 1.5s infinite alternate;
+}
+
+.loader-content p {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin: 15px 0;
+}
+
+.loader-line {
+    width: 180px;
+    height: 2px;
+    margin: auto;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    animation: loaderLine 1.5s infinite;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 8%;
+
+    background: rgba(1, 8, 5, 0.75);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(0, 255, 136, 0.13);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    color: #c3d2c8;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background: #03150c;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/images/doom-hero.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+
+    transform: scale(1.05);
+    animation: cinematicZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes cinematicZoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.48) 50%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.85) 0%,
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(0, 255, 120, 0.16),
+            transparent 45%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 50%,
+            transparent 20%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 65%;
+    max-width: 850px;
+    padding: 130px 0 120px 10%;
+
+    animation: contentReveal 1.5s ease both;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(48px, 7.5vw, 105px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--green);
+    text-shadow: 0 0 35px rgba(0, 255, 136, 0.35);
+}
+
+.hero-description {
+    max-width: 470px;
+    color: #c0d0c5;
+    line-height: 1.9;
+    margin: 28px 0;
+    font-size: 15px;
+}
+
+.primary-btn,
+.outline-btn {
+    display: inline-block;
+    padding: 17px 28px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: 0.35s;
+}
+
+.primary-btn {
+    color: #00190d;
+    background: linear-gradient(120deg, #00a85a, #00ff88);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    background: white;
+}
+
+.primary-btn span {
+    margin-left: 10px;
+}
+
+.outline-btn {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.outline-btn:hover {
+    background: var(--green);
+    color: #00190d;
+}
+
+.fan-label {
+    color: #829889;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 30px;
+}
+
+.hero-bottom {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #a1b5a7;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* PARTICLES */
+
+.particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    opacity: 0;
+    animation: particleFloat linear infinite;
+}
+
+
+/* COMMON SECTIONS */
+
+.section {
+    padding: 110px 10%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 5vw, 50px);
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* STORY */
+
+.story {
+    background:
+        radial-gradient(ellipse at 20% 50%, #0c3020, transparent 55%),
+        #030e08;
+}
+
+.story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.story-image {
+    height: 420px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s;
+}
+
+.story-image:hover img {
+    transform: scale(1.07);
+}
+
+.story-text h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 27px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.story-text > p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.story-text .disclaimer {
+    font-size: 11px;
+    color: #708777;
+}
+
+
+/* DOOM INTRODUCTION */
+
+.doom-section {
+    min-height: 620px;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background: #03150c;
+}
+
+.doom-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url("../assets/images/doom-closeup.jpg");
+    background-size: cover;
+    background-position: center 30%;
+}
+
+.doom-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(1, 8, 5, 0.96),
+        rgba(1, 8, 5, 0.8) 45%,
+        rgba(1, 8, 5, 0.1)
+    );
+}
+
+.doom-content {
+    max-width: 650px;
+    padding: 80px 0 80px 10%;
+}
+
+.doom-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(40px, 7vw, 75px);
+    margin-bottom: 25px;
+}
+
+.doom-content h2 span {
+    color: var(--green);
+}
+
+.doom-content > p:not(.eyebrow) {
+    color: #bdcfc4;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+
+/* CHARACTERS */
+
+.characters {
+    background: #020b06;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.character-card {
+    position: relative;
+    min-height: 270px;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(145deg, #103a24, #04130a);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.character-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(0,255,136,0.2), transparent 65%);
+    pointer-events: none;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--green);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15);
+}
+
+.character-card .symbol {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+    color: var(--green);
+    margin-bottom: auto;
+    text-shadow: 0 0 20px rgba(0,255,136,0.3);
+}
+
+.character-card h3 {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.character-card p {
+    position: relative;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* MULTIVERSE */
+
+.multiverse {
+    position: relative;
+    isolation: isolate;
+    min-height: 550px;
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    overflow: hidden;
+    background: #04180e;
+}
+
+.multiverse-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        linear-gradient(rgba(1,8,5,0.6), rgba(1,8,5,0.75)),
+        url("../assets/images/multiverse.jpg") center/cover;
+
+    animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+
+/* MULTIVERSE SECTION - LAYOUT FIX */
+
+.multiverse-content {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.multiverse-content h2 {
+    font-size: clamp(38px, 5.5vw, 68px);
+    line-height: 1.15;
+    letter-spacing: 3px;
+    margin: 20px 0;
+    overflow-wrap: break-word;
+}
+
+.multiverse-intro {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.multiverse-cards {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 45px auto;
+}
+
+.multiverse-card {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 35px 25px;
+    background: rgba(0, 10, 5, 0.82);
+    border: 1px solid rgba(0, 230, 118, 0.35);
+    border-radius: 12px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.multiverse-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e676;
+    background: rgba(0, 25, 12, 0.95);
+}
+
+.multiverse-number {
+    display: block;
+    color: #00e676;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.multiverse-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.multiverse-card p {
+    color: #c2c9c4;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+
+    .multiverse-content h2 {
+        font-size: 38px;
+    }
+
+    .multiverse-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .multiverse-card {
+        padding: 28px 22px;
+    }
+
+}
+
+
+
+/* GALLERY */
+
+.gallery {
+    background: #020b06;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid rgba(0,255,136,0.15);
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.035);
+    border-color: var(--green);
+}
+
+
+/* CHARACTER MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    background: rgba(0,0,0,0.92);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    padding: 45px;
+
+    background: #071b11;
+    border: 1px solid var(--green);
+    box-shadow: 0 0 45px rgba(0,255,136,0.15);
+}
+
+.modal-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+}
+
+.modal-content h3 {
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.modal-content p:last-child {
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 55px 20px;
+    text-align: center;
+    background: #010805;
+    border-top: 1px solid rgba(0,255,136,0.2);
+}
+
+footer h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #819587;
+    font-size: 11px;
+    margin: 12px 0;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes loaderPulse {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@keyframes loaderLine {
+    0% { transform: scaleX(0.2); opacity: 0.3; }
+    50% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(0.2); opacity: 0.3; }
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.02); }
+    to { transform: scale(1.12); }
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+    15% { opacity: 0.8; }
+    85% { opacity: 0.5; }
+    100% {
+        transform: translate3d(60px, -110vh, 0);
+        opacity: 0;
+    }
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px;
+
+        background: #04180e;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .hero {
+        align-items: flex-end;
+    }
+
+    .hero-background {
+        background-position: 65% center;
+    }
+
+    .hero-shade {
+        background: linear-gradient(
+            0deg,
+            rgba(1,8,5,0.98),
+            rgba(1,8,5,0.6) 70%,
+            rgba(1,8,5,0.2)
+        );
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 130px 7% 140px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 11vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-bottom {
+        left: 7%;
+        right: 7%;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .section {
+        padding: 80px 7%;
+    }
+
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-image {
+        height: 300px;
+    }
+
+    .doom-section {
+        min-height: 550px;
+    }
+
+    .doom-content {
+        padding: 80px 7%;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 260px;
+    }
+
+    .modal-content {
+        padding: 35px 25px;
+    }
+
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-missing {
+    opacity: 0;
+}
+
+.hero-content h1 {
+    animation: titleReveal 1.5s ease forwards;
+}
+
+.hero-content p {
+    animation: titleReveal 1.8s ease forwards;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* STORY SECTION */
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.story-image {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.story-text {
+    max-width: 600px;
+}
+
+.story-label {
+    color: #00e676;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.story-text h3 {
+    font-size: 36px;
+    margin: 15px 0 25px;
+}
+
+.story-text p {
+    color: #bdbdbd;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.story-text h4 {
+    color: #00e676;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-image img {
+        height: 300px;
+    }
+
+    .story-text h3 {
+        font-size: 28px;
+    }
+}
+
+/* DOCTOR DOOM INTRODUCTION */
+
+.doom-intro {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #050805;
+    padding: 80px 8%;
+}
+
+.doom-intro-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.doom-intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.doom-intro-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.80) 42%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.65),
+            transparent
+        );
+}
+
+.doom-intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+}
+
+.doom-intro-content h2 {
+    font-size: clamp(55px, 9vw, 105px);
+    line-height: 0.95;
+    margin: 20px 0;
+    color: #ffffff;
+    letter-spacing: 5px;
+}
+
+.doom-intro-content h3 {
+    color: #00e676;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.doom-intro-content p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.doom-quote {
+    display: inline-block;
+    margin-top: 20px;
+    color: #00e676;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .doom-intro {
+        min-height: 600px;
+        padding: 70px 25px;
+    }
+
+    .doom-intro-overlay {
+        background: rgba(0, 0, 0, 0.78);
+    }
+
+    .doom-intro-content h2 {
+        font-size: 58px;
+    }
+}
+
+
+/* CHARACTER CARD ARTWORK */
+
+.character-card {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 230, 118, 0.2);
+    border-radius: 10px;
+    background: #0c120e;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e676;
+}
+
+.character-image {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.08);
+}
+
+.character-info {
+    padding: 20px;
+}
+
+.character-info .symbol {
+    color: #00e676;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.character-info h3 {
+    color: #ffffff;
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.character-info p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.view-details {
+    display: inline-block;
+    margin-top: 18px;
+    color: #00e676;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .character-image {
+        height: 300px;
+    }
+}
+
+
+/* CINEMATIC GALLERY */
+
+.gallery {
+    padding: 100px 8%;
+    background: #050905;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 50px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 230, 118, 0.2);
+    background: #101510;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 35px 20px 20px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.95)
+    );
+
+    transform: translateY(5px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+.gallery-caption h3 {
+    color: #00e676;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.gallery-caption p {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        padding: 70px 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+}
+
+
+/* =====================================
+   CINEMATIC ANIMATION ENHANCEMENTS
+===================================== */
+
+/* Smooth page navigation */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Buttons */
+
+.primary-btn {
+    display: inline-block;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 230, 118, 0.3);
+}
+
+/* Character cards */
+
+.character-card {
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 230, 118, 0.12);
+}
+
+/* Multiverse cards */
+
+.multiverse-card {
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+/* Gallery images */
+
+.gallery-item img {
+    transition: transform 0.7s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Section heading */
+
+.section-heading {
+    animation: cinematicEntrance 1s ease both;
+}
+
+@keyframes cinematicEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility: respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================
+   CINEMATIC TYPOGRAPHY
+===================================== */
+
+/* Main section headings */
+
+.section-heading h2 {
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 800;
+    letter-spacing: 4px;
+    line-height: 1.15;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+
+/* Small section labels */
+
+.eyebrow {
+    color: #00e676;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* General paragraph typography */
+
+.story-text p,
+.multiverse-content p,
+.doom-intro-content p {
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+/* Character headings */
+
+.character-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Gallery captions */
+
+.gallery-caption h3 {
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* =====================================
+   EMERALD LIGHTING EFFECTS
+===================================== */
+
+/* Main hero heading */
+
+.hero-content h1 {
+    text-shadow:
+        0 0 10px rgba(0, 230, 118, 0.25),
+        0 0 30px rgba(0, 230, 118, 0.12);
+}
+
+/* Doctor Doom heading */
+
+.doom-intro-content h2 {
+    text-shadow:
+        0 0 15px rgba(0, 230, 118, 0.3),
+        0 0 40px rgba(0, 230, 118, 0.12);
+}
+
+/* Emerald text glow */
+
+.multiverse-content h2 span {
+    text-shadow:
+        0 0 12px rgba(0, 230, 118, 0.5),
+        0 0 30px rgba(0, 230, 118, 0.2);
+}
+
+/* Section heading glow */
+
+.section-heading h2 {
+    text-shadow: 0 0 18px rgba(0, 230, 118, 0.12);
+}
+
+/* Card borders */
+
+.character-card:hover,
+.multiverse-card:hover,
+.gallery-item:hover {
+    box-shadow: 0 0 22px rgba(0, 230, 118, 0.12);
+}
+
+
+
+/* SOUND BUTTON */
+
+#soundToggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    background: #003b20;
+    color: #00e676;
+
+    border: 2px solid #00e676;
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =================================
+   MARVEL CINEMATIC INTRO
+================================= */
+
+.marvel-intro {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: #000;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.skip-intro {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    padding: 12px 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+.skip-intro:hover {
+    background: #fff;
+    color: #000;
+}
+
+.marvel-intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+@media (max-width: 600px) {
+    .skip-intro {
+        right: 18px;
+        bottom: 20px;
+    }
+}
+.enable-intro-sound {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 3;
+    letter-spacing: 1px;
+}
+
+.enable-intro-sound:hover {
+    background: white;
+    color: black;
+}
+
+.enable-intro-sound.hidden {
+    display: none;
+}

@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="An unofficial cinematic fan experience exploring Doctor Doom, Marvel characters and the multiverse.">
+
+    <title>DOOMSDAY | Cinematic Universe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<audio id="ambientAudio" loop preload="none">
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+</audio>
+
+<body>
+
+    
+<!-- MARVEL CINEMATIC INTRO -->
+<div id="marvelIntro" class="marvel-intro">
+
+    <video
+        id="marvelIntroVideo"
+        class="intro-video"
+        autoplay
+        muted
+        playsinline
+        preload="auto">
+
+        <source src="assets/Video/marvel-intro.mp4" type="video/mp4">
+
+        Your browser does not support video playback.
+    </video>
+
+    <button id="skipIntro" class="skip-intro" type="button">
+        SKIP INTRO →
+    </button>
+
+    <button id="enableIntroSound" class="enable-intro-sound" type="button">
+    🔊 ENABLE SOUND
+</button>
+
+</div>
+
+
+
+    <!-- LOADING SCREEN -->
+
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-symbol">D</div>
+            <p>THE MULTIVERSE IS COLLAPSING</p>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            DOOM<span>SDAY</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#story">The Story</a>
+            <a href="#characters">Characters</a>
+            <a href="#multiverse">Multiverse</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-background"></div>
+            <div class="hero-shade"></div>
+            <div class="particles" id="particles"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    A NEW ERA BEGINS
+                </p>
+
+                <h1>
+                    THE END
+                    <span>IS COMING</span>
+                </h1>
+
+                <p class="hero-description">
+                    Across infinite realities, a new power rises.
+                    The fate of every universe hangs in the balance.
+                </p>
+
+                <a href="#story" class="primary-btn">
+                    ENTER THE UNIVERSE <span>→</span>
+                </a>
+
+                <p class="fan-label">
+                    AN UNOFFICIAL FAN-MADE EXPERIENCE
+                </p>
+
+            </div>
+
+            <div class="hero-bottom">
+                <span>EARTH IS NOT THE ONLY REALITY</span>
+                <span>SCROLL TO EXPLORE ↓</span>
+            </div>
+
+        </section>
+
+
+        <!-- STORY SECTION -->
+
+        
+<section class="story section" id="story">
+
+    <div class="section-heading">
+        <p class="eyebrow">THE BEGINNING OF THE END</p>
+        <h2>THE STORY</h2>
+    </div>
+
+    <div class="story-content">
+
+        <div class="story-image">
+            <img
+                src="assets/images/doom-castle.jpg"
+                alt="A mysterious castle surrounded by darkness"
+            />
+        </div>
+
+        <div class="story-text">
+            <p class="story-label">A NEW THREAT RISES</p>
+
+            <h3>WHEN WORLDS COLLIDE</h3>
+
+            <p>
+                The boundaries of reality are beginning to collapse.
+                Across the multiverse, timelines are colliding,
+                and countless worlds face an uncertain future.
+            </p>
+
+            <p>
+                As an unknown power begins to rise, heroes from
+                different realities must confront a threat unlike
+                anything they have faced before.
+            </p>
+
+            <p>
+                Every decision has consequences. Every world has
+                something to lose.
+            </p>
+
+            <h4>WHO WILL STAND WHEN THE END BEGINS?</h4>
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- DOCTOR DOOM INTRODUCTION -->
+
+        
+<section class="doom-intro section" id="doom">
+
+    <div class="doom-intro-image">
+        <img
+            src="assets/images/doom-closeup.jpg"
+            alt="A mysterious armored ruler"
+        />
+    </div>
+
+    <div class="doom-intro-overlay"></div>
+
+    <div class="doom-intro-content">
+
+        <p class="eyebrow">THE RULER. THE POWER. THE FEAR.</p>
+
+        <h2>DOCTOR<br>DOOM</h2>
+
+        <h3>THE MAN BEHIND THE MASK</h3>
+
+        <p>
+            A ruler driven by ambition, intelligence and an
+            unshakable belief in his own destiny. Behind the
+            armor lies a mind capable of challenging the
+            greatest forces in existence.
+        </p>
+
+        <p>
+            In a universe on the edge of collapse, his arrival
+            could change everything.
+        </p>
+
+        <span class="doom-quote">
+            "POWER IS NOT GIVEN. IT IS TAKEN."
+        </span>
+
+    </div>
+
+</section>
+
+
+
+        <!-- CHARACTER SECTION -->
+
+        <section class="characters section" id="characters">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">LEGENDS WILL RISE</p>
+
+                <h2>THE CHARACTERS</h2>
+
+                <p>
+                    Explore the heroes and villains
+                    of the Marvel universe.
+                </p>
+
+            </div>
+
+            <div class="character-grid" id="characterGrid">
+                <!-- Generated by JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- MULTIVERSE SECTION -->
+
+        
+<section class="multiverse section" id="multiverse">
+
+    <div class="multiverse-background"></div>
+
+    <div class="multiverse-overlay"></div>
+
+    <div class="multiverse-content">
+
+        <p class="eyebrow">BEYOND REALITY</p>
+
+        <h2>THE <span>MULTIVERSE</span></h2>
+
+        <p class="multiverse-intro">
+            Infinite timelines. Endless possibilities.
+            One reality-changing threat.
+        </p>
+
+        <div class="multiverse-cards">
+
+            <div class="multiverse-card">
+                <span class="multiverse-number">01</span>
+                <h3>ALTERNATE REALITIES</h3>
+                <p>
+                    Every universe holds a different possibility.
+                    Every reality has its own story.
+                </p>
+            </div>
+
+            <div class="multiverse-card">
+                <span class="multiverse-number">02</span>
+                <h3>FRACTURED TIMELINES</h3>
+                <p>
+                    The boundaries between dimensions are weakening.
+                    The timelines are no longer stable.
+                </p>
+            </div>
+
+            <div class="multiverse-card">
+                <span class="multiverse-number">03</span>
+                <h3>THE FINAL CONVERGENCE</h3>
+                <p>
+                    When realities collide, every world
+                    faces an uncertain future.
+                </p>
+            </div>
+
+        </div>
+
+        <a href="#gallery" class="primary-btn">
+            EXPLORE THE GALLERY →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+        
+<!-- GALLERY SECTION -->
+
+<section class="gallery section" id="gallery">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">VISUAL ARCHIVE</p>
+
+        <h2>THE GALLERY</h2>
+
+        <p>
+            A glimpse into a universe on the edge of destruction.
+        </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img
+                src="assets/images/doom-closeup.jpg"
+                alt="Armored ruler cinematic portrait"
+                loading="lazy">
+            <div class="gallery-caption">
+                <h3>THE RULER</h3>
+                <p>Behind the mask</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="assets/images/doom-throne.jpg"
+                alt="Dark throne room"
+                loading="lazy">
+            <div class="gallery-caption">
+                <h3>THE THRONE</h3>
+                <p>A kingdom of power</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="assets/images/multiverse.jpg"
+                alt="Cosmic multiverse"
+                loading="lazy">
+            <div class="gallery-caption">
+                <h3>THE MULTIVERSE</h3>
+                <p>Infinite realities</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="assets/images/doom-castle.jpg"
+                alt="Mysterious castle"
+                loading="lazy">
+            <div class="gallery-caption">
+                <h3>THE FORTRESS</h3>
+                <p>Where power resides</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="assets/images/doom-hero.jpg"
+                alt="Cinematic castle landscape"
+                loading="lazy">
+            <div class="gallery-caption">
+                <h3>THE RISING THREAT</h3>
+                <p>The beginning of the end</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <!-- CHARACTER MODAL -->
+
+    <div class="modal" id="characterModal" aria-hidden="true">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal"
+                    aria-label="Close character profile">
+                ×
+            </button>
+
+            <p class="eyebrow">CHARACTER PROFILE</p>
+
+            <h2 id="modalName"></h2>
+
+            <h3 id="modalRole"></h3>
+
+            <p id="modalDescription"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>DOOMSDAY</h3>
+
+        <p>Created by a Marvel fan, for Marvel fans.</p>
+
+        <p>
+            Unofficial fan-made project.
+            Not affiliated with Marvel or Marvel Studios.
+        </p>
+
+        <p>© 2026 Fan Project</p>
+
+    </footer>
+
+
+    
+<!-- CINEMATIC AMBIENT AUDIO -->
+
+<audio id="ambientAudio" loop preload="none">
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SOUND BUTTON -->
+
+<button id="soundToggle"
+        class="sound-toggle"
+        type="button"
+        aria-pressed="false">
+    <span id="soundIcon">♪</span>
+    <span id="soundLabel">SOUND OFF</span>
+</button>
+
+<!-- JAVASCRIPT -->
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+
+</body>
+</html>
