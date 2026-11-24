@@ -73,7 +73,7 @@ const characters = [
         name: "Doctor Doom",
         role: "The Mastermind",
         symbol: "D",
-        image: "assets/images/doom-closeup.jpg",
+        image: "assets/Images/doom-closeup.jpg",
         description:
             "Victor von Doom is a brilliant scientist, ruler and master of sorcery. His ambition and extraordinary intelligence make him one of Marvel's most formidable villains."
     },
@@ -82,7 +82,7 @@ const characters = [
         name: "Iron Man",
         role: "The Armoured Avenger",
         symbol: "I",
-        image: "assets/images/iron-man.jpg",
+        image: "assets/Images/iron-man.jpg",
         description:
             "Tony Stark is a brilliant inventor who uses advanced technology and powered armour to protect humanity."
     },
@@ -91,7 +91,7 @@ const characters = [
         name: "Captain America",
         role: "The Super Soldier",
         symbol: "A",
-        image: "assets/images/captain-america.jpg",
+        image: "assets/Images/captain-america.jpg",
         description:
             "Steve Rogers represents courage, leadership and an unwavering commitment to protecting humanity."
     },
@@ -100,7 +100,7 @@ const characters = [
         name: "Thor",
         role: "God of Thunder",
         symbol: "T",
-        image: "assets/images/thor.jpg",
+        image: "assets/Images/thor.jpg",
         description:
             "Thor is the Asgardian God of Thunder, possessing extraordinary strength and command over lightning."
     },
@@ -109,7 +109,7 @@ const characters = [
         name: "Spider-Man",
         role: "The Friendly Neighbourhood Hero",
         symbol: "S",
-        image: "assets/images/spider-man.jpg",
+        image: "assets/Images/spider-man.jpg",
         description:
             "Peter Parker combines extraordinary abilities, intelligence and responsibility to protect others."
     },
@@ -118,7 +118,7 @@ const characters = [
         name: "Doctor Strange",
         role: "Master of the Mystic Arts",
         symbol: "M",
-        image: "assets/images/doctor-strange.jpg",
+        image: "assets/Images/doctor-strange.jpg",
         description:
             "Stephen Strange is a powerful sorcerer who protects reality through his knowledge of the mystic arts."
     }

@@ -171,7 +171,7 @@ img {
     position: absolute;
     inset: 0;
 
-    background-image: url("../assets/images/doom-hero.jpg");
+    background-image: url("../assets/Images/doom-hero.jpg");
     background-size: cover;
     background-position: center 35%;
     background-repeat: no-repeat;
@@ -440,7 +440,7 @@ img {
     inset: 0;
     z-index: -2;
 
-    background-image: url("../assets/images/doom-closeup.jpg");
+    background-image: url("../assets/Images/doom-closeup.jpg");
     background-size: cover;
     background-position: center 30%;
 }
@@ -569,7 +569,7 @@ img {
 
     background:
         linear-gradient(rgba(1,8,5,0.6), rgba(1,8,5,0.75)),
-        url("../assets/images/multiverse.jpg") center/cover;
+        url("../assets/Images/multiverse.jpg") center/cover;
 
     animation: heroZoom 20s ease-in-out infinite alternate;
 }

@@ -29,7 +29,7 @@ AvengersDoomsDay/
 - index.html
 - css/style.css
 - js/script.js
-- assets/images/
+- assets/Images/
 
 ## Run Locally
 
